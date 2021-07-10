@@ -16,11 +16,5 @@ def add_user():
     result = es_client.index(index="user-map", body=user_obj)
     return jsonify(result)
 
-@app.route('/userdelete', methods = ["DELETE"])
-def delete_user():
-    user_name = request.json.get('uname')
-    result = es_client.delete()
-
-
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
